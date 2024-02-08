@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.container{
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+
+
+}
+svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    & .icon-cart{
+        position: relative;
+        & span{
+        display: flex;
+        width: 30px;
+        height: 30px;
+        background-color: rebeccapurple;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius:50% ;
+        position: absolute;
+        top: 50%;
+        right: -20px;
+    }
+    }
+
+}
+
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    & .item{
+        background-color: #eeeee6;
+        border-radius: 17px;
+        padding: 20px;
+
+        & img{
+            width: 90%;
+            filter: drop-shadow(0 18px 20px #0009);
+        }
+
+        & h2{
+            margin-top: 20px;
+            font-weight: 500;
+            font-size: large;
+        }
+
+        & .price{
+            letter-spacing: 7px;
+            font-size: small;
+        }
+        & button{
+            background-color: rebeccapurple;
+            color: #eee;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+body.showCart .cartTab{
+    inset: 0 0 0 auto;
+}
+body.showCart .container{
+    transform: translateX(-250px);
+}
+.cartTab{
+    transition: .5s;
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    // top: 0;
+    // right: 0;
+    // bottom: 0;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+
+    & h1{
+        padding: 20px;
+        margin: 0;
+        font-weight: 300;
+    }
+
+    & .btn{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & button{
+            background-color: rebeccapurple;
+            border: none;
+            font-family: 'Poppins';
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        & .close{
+            background-color:#eee;
+        }
+    }
+
+    & .listCart{
+
+        overflow: auto;
+
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+        & .item{
+            display: grid;
+            grid-template-columns: 70px 150px 50px 1fr;
+            gap: 10px;
+            text-align: center;
+            align-items: center;
+
+            & img{
+                width: 100%;
+            }
+            &:nth-child(even){
+                background-color: #eee1;
+            }
+        }
+
+        & .quantity{
+
+            & span{
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-color: #eee;
+                color: #555;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:nth-child(2){
+                    background-color: transparent;
+                    color: #eee;
+                }
+            }
+        }
+    }
+}
+
+
+// .head-1{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 3rem;
+//     margin-bottom: 3rem;
+// }
+// .pizza-box{
+//     border: 1px solid rgba(202, 200, 200, 0.826);
+//     padding: 20px;
+//     border-radius: 30px;
+
+
+//     & .pizza-img{
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//         & img{
+//             width: 250px;
+//             border-radius: 50%;
+//         }
+//     }
+
+//     & .pizza-item{
+//         padding: 15px;
+
+//         & h3{
+//             font-size: 25px;
+//             font-weight: 700;
+//         }
+
+//         & p{
+//             font-size: 12px;
+//             font-weight: 400;
+//             color: #000000;
+//         }
+//     }
+
+//     & .pizza-price{
+//         display: flex;
+//         justify-content: center;
+//         font-weight: 300;
+//         font-size: 24px;
+//     }
+// }
+
