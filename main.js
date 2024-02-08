@@ -2,8 +2,12 @@ let iconCart = document.querySelector('.icon-cart');
 let closeCart = document.querySelector('.close');
 let body = document.querySelector('body');
 let listProductHtml = document.querySelector('.listProduct');
+let listCartHTML = document.querySelector('.listCart');
+let iconCartspan = document.querySelector('.icon-cart span');
+
 
 let listProduct = [];
+let carts = [];
 
 // ----Sebet iconunun click'i zamanı baş verecek hadise---BAŞLANĞIC---
 iconCart.addEventListener("click", () => {
@@ -46,10 +50,22 @@ const addDataToHTML = () =>{
 listProductHtml.addEventListener("click", (event) =>{
     let positionClick = event.target;
     if (positionClick.classList.contains('addCart')) {
-        
-        alert('1')
+        let product_id = positionClick.parentElement.dataset.id;
+        addToCart(product_id);
     }
-})
+});
+
+const addToCart = (product_id) => {
+    let positionThisProductInCart = carts.findIndex((value) =>{})
+    if (carts.length <= 0) {
+        carts = [{
+            product_id: product_id,
+            quantity:1
+        }]
+    }
+    console.log(carts);
+
+}
 
 const initApp = () => {
 // ---DATA'DAN MELUMATIN GÖTÜRÜLMESİ---
