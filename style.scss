@@ -21,19 +21,28 @@ body{
 svg{
     width: 30px;
 }
+.icon-cart:hover{
+    background-color: #F58656;
+}
 header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px 0;
 
     & .icon-cart{
         position: relative;
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 6px;
+        transition: .4s;
+        
         & span{
         display: flex;
         width: 30px;
         height: 30px;
-        background-color: rebeccapurple;
+        background-color: #F58656;
         justify-content: center;
         align-items: center;
         color: #fff;
@@ -45,20 +54,27 @@ header{
     }
 
 }
+.listProduct .item button:hover{
+    background-color: #F58656;
+}
+.listProduct .item button:hover.addCart svg{
+    fill: #fff;
+}
 
 .listProduct{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 
+
     & .item{
-        background-color: #eeeee6;
+        border: 1px solid rgba(74, 74, 74, 0.29);
         border-radius: 17px;
         padding: 20px;
 
         & img{
             width: 90%;
-            height: 140px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
             filter: drop-shadow(0 18px 20px #0009);
@@ -72,30 +88,38 @@ header{
         }
 
         & .price{
-            letter-spacing: 7px;
+            letter-spacing: 3px;
             font-size: small;
         }
         & button{
-            background-color: rebeccapurple;
+            background-color: #e7926e;
             color: #eee;
-            padding: 5px 10px;
+            padding: 5px 8px;
             border-radius: 20px;
             margin-top: 10px;
             border: none;
             cursor: pointer;
+    transition: .4s;
+
         }
     }
+}
+.addCart svg{
+    fill: #F58656;
 }
 body.showCart .cartTab{
     inset: 0 0 0 auto;
 }
-body.showCart .container{
-    transform: translateX(-250px);
+// body.showCart .container{
+//     transform: translateX(-250px);
+// }
+.btn .close:hover{
+    background-color: #F58656;
 }
 .cartTab{
     transition: .5s;
     width: 330px;
-    background-color: #353432;
+    background-color: rgba(162, 158, 164, 0.861);
     color: #eee;
     position: fixed;
     // top: 0;
@@ -116,7 +140,7 @@ body.showCart .container{
         grid-template-columns: repeat(2, 1fr);
 
         & button{
-            background-color: rebeccapurple;
+            background-color: #F58656;
             border: none;
             font-family: 'Poppins';
             font-weight: 500;
@@ -125,6 +149,7 @@ body.showCart .container{
 
         & .close{
             background-color:#eee;
+            transition: .3s;
         }
     }
 
@@ -170,50 +195,13 @@ body.showCart .container{
     }
 }
 
-
-// .head-1{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-top: 3rem;
-//     margin-bottom: 3rem;
-// }
-// .pizza-box{
-//     border: 1px solid rgba(202, 200, 200, 0.826);
-//     padding: 20px;
-//     border-radius: 30px;
-
-
-//     & .pizza-img{
-//         width: 100%;
-//         display: flex;
-//         justify-content: center;
-//         & img{
-//             width: 250px;
-//             border-radius: 50%;
-//         }
-//     }
-
-//     & .pizza-item{
-//         padding: 15px;
-
-//         & h3{
-//             font-size: 25px;
-//             font-weight: 700;
-//         }
-
-//         & p{
-//             font-size: 12px;
-//             font-weight: 400;
-//             color: #000000;
-//         }
-//     }
-
-//     & .pizza-price{
-//         display: flex;
-//         justify-content: center;
-//         font-weight: 300;
-//         font-size: 24px;
-//     }
-// }
-
+@media screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
